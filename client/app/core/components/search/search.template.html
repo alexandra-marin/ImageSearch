@@ -1,0 +1,52 @@
+<div>
+    <form id="searchForm"
+        style="display: block"
+        class="navbar-form navbar-right">
+        <div class="form-group">
+            <input [(ngModel)]="searchTerm"
+                name="searchTerm"
+                type="text"
+                class="form-control"
+                placeholder="Search photos">
+        </div>
+        <button class="btn btn-default"
+            (click)="search(searchTerm)">
+        Search
+        </button>
+    </form>
+    <h1>Search</h1>
+    <p>Search Flickr images by tag.</p>
+    <p>Displaying results for: {{searchTerm}}</p>
+    <div *ngIf="showModal"
+        id="selectedImageModal"
+        class="centered">
+        <div class="modal-dialog"
+            role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button"
+                        class="close"
+                        (click)=closeModal()
+                        aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"
+                        id="myModalLabel">{{selectedImage.title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="middle"
+                        src="http://farm{{selectedImage.farm}}.staticflickr.com/{{selectedImage.server}}/{{selectedImage.id}}_{{selectedImage.secret}}.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="thumbnailsList">
+        <li *ngFor="let photo of photos">
+            <img src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg"
+                class="tn"
+                width="191"
+                height="146"
+                data-toggle="modal"
+                data-target="#selectedImageModal"
+                (click)=setSelectedImage(photo)>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+ul {
+	padding: 0;
+	width: 80%;
+	margin: 20px auto;
+}
+li {
+	display: inline;
+}
+.tn {
+	margin: 2px 0px;
+	box-shadow: #999 1px 1px 3px 1px;
+	cursor: pointer;
+}
+.modal-content {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.middle {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

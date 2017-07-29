@@ -6,8 +6,8 @@ Run the following:
 
 ```bash
 
-git clone https://github.com/alexandra-marin/FlickSearch
-cd FlickSearch
+git clone https://github.com/alexandra-marin/ImageSearch
+cd ImageSearch
 
 ```
 
@@ -15,7 +15,7 @@ Insert your API key in:
 
 ```bash
 
-FlickSearch/key.js
+ImageSearch/key.js
 
 ```
 
